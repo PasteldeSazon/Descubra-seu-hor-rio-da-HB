@@ -12,9 +12,8 @@ export default db.define('client', {
         type: sequelize.STRING,
         allowNull: false
     },
-    email: {
+    sala: { // Certifique-se que o nome aqui é 'sala'
         type: sequelize.STRING,
         allowNull: false
     }
-
-})
+});

@@ -13,6 +13,15 @@ html
               label(for='nome') Nome:
               input#nome.form-control(type='text' placeholder='Seu nome' name='nome')
             div.form-group
-              label(for='email') Email:
-              input#email.form-control(type='email' placeholder='name@email.com' name='email')
+              label(for='sala') Sua Sala de Aula:
+              select#sala.form-control(type='text' placeholder='Sua sala de aula' name='sala')
+                option(value='101 integral') 101 integral
+                option(value='101 regular') 101 regular
+                option(value='102 integral') 102 integral
+                option(value='102 regular') 102 regular
+                option(value='201 integral') 201 integral
+                option(value='201 regular') 201 regular
+                option(value='202 integral') 202 integral
+                option(value='301 integral') 301 integral
+
             button.btn.btn-primary(type='submit') Enviar

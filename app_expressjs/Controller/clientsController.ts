@@ -3,13 +3,21 @@ import { IClient } from "../Model/clients";
 import clientsModel from "../Model/clientsModel"; 
 
 async function index(req: Request, res: Response, next: any) {
-  const clients = await clientsModel.findAll();
-  res.render("index", { clients }); // Isso envia os dados para o seu index.pug
+  try {
+    const clients = await clientsModel.findAll();
+    res.render("index", { clients }); // Verifique se o nome da variável é 'clients'
+  } catch (error) {
+    res.status(500).send("Erro ao carregar a página principal");
+  }
 }
 
 async function show(req: Request, res: Response, next: any) {
-  const clients = await clientsModel.findByPk(req.params.id);
-  res.json(clients);
+  try {
+    const clients = await clientsModel.findByPk(req.params.id);
+    res.json(clients);
+  } catch (error) {
+    res.status(500).send("Erro ao carregar o cliente");
+  }
 }
 function create(req: Request, res: Response, next: any) {
   res.render("create");}
