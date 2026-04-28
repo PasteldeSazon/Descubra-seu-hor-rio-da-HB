@@ -4,13 +4,29 @@ html(lang="pt-br")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title Descubra seu horário escolar da HB
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
-  
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    
   body.container.mt-4
     h1 Descubra seu horário escolar da HB
     p Olá, seja bem-vindo ao site que vai te ajudar!
-    p Selecione o dia da semana para ver as aulas programadas.
-    
+    p Selecione sua sala e o dia da semana para ver as aulas programadas.
+
+    // Coluna da direita (ocupa 4 espaços de 12)
+
+  p tesste da posição da coluna da direita
+
+    .form-group
+      label(for="sala") Escolha sua sala:
+      select.form-control#sala(name="sala")
+        option(value='101 integral') 101 integral
+        option(value='101 regular') 101 regular
+        option(value='102 Integral') 102 Integral
+        option(value='102 regular') 102 regular
+        option(value='201 integral') 201 integral
+        option(value='201 regular') 201 regular
+        option(value='202 integral') 202 integral
+        option(value='301 integral') 301 integral
+
     .form-group
       label(for="dia") Escolha o dia da semana:
       select.form-control#dia(name="dia")
@@ -42,77 +58,82 @@ html(lang="pt-br")
 
     script.
       const horarios = {
-        "Segunda-feira": [
-          { hora: "07:30 - 08:15", materia: "Inglês", professora: "Magda" },
-          { hora: "08:15 - 09:00", materia: "Inglês", professora: "Magda" },
-          { hora: "09:00 - 09:45", materia: "Ed.Fis", professor: "Lucas" },
-          { hora: "09:45 - 10:00", materia: "Recreio" },
-          { hora: "10:00 - 10:45", materia: "Geografia", professora: "Alexandra" },
-          { hora: "10:45 - 11:30", materia: "Bio", professor: "Arci" },
-          { hora: "11:30 - 12:15", materia: "Artes", professora: "Magda" },
-          { hora: "12:15 - 13:15", materia: "Intervalo" },
-          { hora: "13:15 - 14:00", materia: "Prog. Web", professora: "Lidiane" },
-          { hora: "14:00 - 14:45", materia: "História", professor: "Vander" },
-          { hora: "14:45 - 15:30", materia: "Matemática", professor: "Diogo" },
-          { hora: "15:30 - 15:45", materia: "Recreio" },
-          { hora: "15:45 - 16:30", materia: "Prog. Web", professora: "Lidiane" }
-        ],
-        "Terça-feira": [
-          { hora: "07:30 - 08:15", materia: "Inglês", professora: "Magda" },
-          { hora: "08:15 - 09:00", materia: "LP e Lit", professora: "Simone" },
-          { hora: "09:00 - 09:45", materia: "Arquit.Comp", professor: "Ilizeu" },
-          { hora: "09:45 - 10:00", materia: "Recreio" },
-          { hora: "10:00 - 10:45", materia: "Inglês", professora: "Magda" },
-          { hora: "10:45 - 11:30", materia: "Prog. Web", professora: "Lidiane" },
-          { hora: "11:30 - 12:15", materia: "Filosofia", professor: "Antonio" },
-          { hora: "12:15 - 13:15", materia: "Intervalo" },
-          { hora: "13:15 - 14:00", materia: "LP e Lit", professora: "Simone" },
-          { hora: "14:00 - 14:45", materia: "Qui", professora: "Graciela" },
-          { hora: "14:45 - 15:30", materia: "Filosofia", professor: "Antonio" },
-          { hora: "15:30 - 15:45", materia: "Recreio" },
-          { hora: "15:45 - 16:30", materia: "Qui", professora: "Graciela" }
-        ],
-        "Quarta-feira": [
-          { hora: "07:30 - 08:15", materia: "Algor. Log. Prog", professora: "Lidiane" },
-          { hora: "08:15 - 09:00", materia: "Algor. Log. Prog", professora: "Lidiane" },
-          { hora: "09:00 - 09:45", materia: "Artes", professora: "Magda" },
-          { hora: "09:45 - 10:00", materia: "Recreio" },
-          { hora: "10:00 - 10:45", materia: "História", professor: "Vander" },
-          { hora: "10:45 - 11:30", materia: "Bio", professor: "Arci" },
-          { hora: "11:30 - 12:15", materia: "LP e Lit", professora: "Simone" },
-          { hora: "12:15 - 13:15", materia: "Intervalo" },
-          { hora: "13:15 - 14:00", materia: "Física", professor: "Lindomar" },
-          { hora: "14:00 - 14:45", materia: "Física", professor: "Lindomar" },
-          { hora: "14:45 - 15:30", materia: "Ed. Fis", professor: "Lucas" },
-          { hora: "15:30 - 15:45", materia: "Recreio" },
-          { hora: "15:45 - 16:30", materia: "Matemática", professor: "Diogo" }
-        ],
-        "Quinta-feira": [
-          { hora: "07:30 - 08:15", materia: "Algor. Log. Prog", professora: "Lidiane" },
-          { hora: "08:15 - 09:00", materia: "Algor. Log. Prog", professora: "Lidiane" },
-          { hora: "09:00 - 09:45", materia: "Matemática", professor: "Diogo" },
-          { hora: "09:45 - 10:00", materia: "Recreio" },
-          { hora: "10:00 - 10:45", materia: "Geografia", professora: "Alexandra" },
-          { hora: "10:45 - 11:30", materia: "LP e Lit", professora: "Simone" }
-        ],
-        "Sexta-feira": [
-          { hora: "07:30 - 08:15", materia: "Arquit.Comp", professor: "Ilizeu" },
-          { hora: "08:15 - 09:00", materia: "Arquit.Comp", professor: "Ilizeu" },
-          { hora: "09:00 - 09:45", materia: "Matemática", professor: "Diogo" },
-          { hora: "09:45 - 10:00", materia: "Recreio" },
-          { hora: "10:00 - 10:45", materia: "Sociologia", professor: "Everaldo" },
-          { hora: "10:45 - 11:30", materia: "Sociologia", professor: "Everaldo" }
-        ]
+        "102 Integral": {
+          "Segunda-feira": [
+            { hora: "07:30 - 08:15", materia: "Inglês", professora: "Magda" },
+            { hora: "08:15 - 09:00", materia: "Inglês", professora: "Magda" },
+            { hora: "09:00 - 09:45", materia: "Ed.Fis", professor: "Lucas" },
+            { hora: "09:45 - 10:00", materia: "Recreio" },
+            { hora: "10:00 - 10:45", materia: "Geografia", professora: "Alexandra" },
+            { hora: "10:45 - 11:30", materia: "Bio", professor: "Arci" },
+            { hora: "11:30 - 12:15", materia: "Artes", professora: "Magda" },
+            { hora: "12:15 - 13:15", materia: "Intervalo" },
+            { hora: "13:15 - 14:00", materia: "Prog. Web", professora: "Lidiane" },
+            { hora: "14:00 - 14:45", materia: "História", professor: "Vander" },
+            { hora: "14:45 - 15:30", materia: "Matemática", professor: "Diogo" },
+            { hora: "15:30 - 15:45", materia: "Recreio" },
+            { hora: "15:45 - 16:30", materia: "Prog. Web", professora: "Lidiane" }
+          ],
+          "Terça-feira": [
+            { hora: "07:30 - 08:15", materia: "Inglês", professora: "Magda" },
+            { hora: "08:15 - 09:00", materia: "LP e Lit", professora: "Simone" },
+            { hora: "09:00 - 09:45", materia: "Arquit.Comp", professor: "Ilizeu" },
+            { hora: "09:45 - 10:00", materia: "Recreio" },
+            { hora: "10:00 - 10:45", materia: "Inglês", professora: "Magda" },
+            { hora: "10:45 - 11:30", materia: "Prog. Web", professora: "Lidiane" },
+            { hora: "11:30 - 12:15", materia: "Filosofia", professor: "Antonio" },
+            { hora: "12:15 - 13:15", materia: "Intervalo" },
+            { hora: "13:15 - 14:00", materia: "LP e Lit", professora: "Simone" },
+            { hora: "14:00 - 14:45", materia: "Qui", professora: "Graciela" },
+            { hora: "14:45 - 15:30", materia: "Filosofia", professor: "Antonio" },
+            { hora: "15:30 - 15:45", materia: "Recreio" },
+            { hora: "15:45 - 16:30", materia: "Qui", professora: "Graciela" }
+          ],
+          "Quarta-feira": [
+            { hora: "07:30 - 08:15", materia: "Algor. Log. Prog", professora: "Lidiane" },
+            { hora: "08:15 - 09:00", materia: "Algor. Log. Prog", professora: "Lidiane" },
+            { hora: "09:00 - 09:45", materia: "Artes", professora: "Magda" },
+            { hora: "09:45 - 10:00", materia: "Recreio" },
+            { hora: "10:00 - 10:45", materia: "História", professor: "Vander" },
+            { hora: "10:45 - 11:30", materia: "Bio", professor: "Arci" },
+            { hora: "11:30 - 12:15", materia: "LP e Lit", professora: "Simone" },
+            { hora: "12:15 - 13:15", materia: "Intervalo" },
+            { hora: "13:15 - 14:00", materia: "Física", professor: "Lindomar" },
+            { hora: "14:00 - 14:45", materia: "Física", professor: "Lindomar" },
+            { hora: "14:45 - 15:30", materia: "Ed. Fis", professor: "Lucas" },
+            { hora: "15:30 - 15:45", materia: "Recreio" },
+            { hora: "15:45 - 16:30", materia: "Matemática", professor: "Diogo" }
+          ],
+          "Quinta-feira": [
+            { hora: "07:30 - 08:15", materia: "Algor. Log. Prog", professora: "Lidiane" },
+            { hora: "08:15 - 09:00", materia: "Algor. Log. Prog", professora: "Lidiane" },
+            { hora: "09:00 - 09:45", materia: "Matemática", professor: "Diogo" },
+            { hora: "09:45 - 10:00", materia: "Recreio" },
+            { hora: "10:00 - 10:45", materia: "Geografia", professora: "Alexandra" },
+            { hora: "10:45 - 11:30", materia: "LP e Lit", professora: "Simone" }
+          ],
+          "Sexta-feira": [
+            { hora: "07:30 - 08:15", materia: "Arquit.Comp", professor: "Ilizeu" },
+            { hora: "08:15 - 09:00", materia: "Arquit.Comp", professor: "Ilizeu" },
+            { hora: "09:00 - 09:45", materia: "Matemática", professor: "Diogo" },
+            { hora: "09:45 - 10:00", materia: "Recreio" },
+            { hora: "10:00 - 10:45", materia: "Sociologia", professor: "Everaldo" },
+            { hora: "10:45 - 11:30", materia: "Sociologia", professor: "Everaldo" }
+          ]
+        }
       };
 
       function mostrarHorario() {
+        const salaEscolhida = document.getElementById("sala").value;
         const diaEscolhido = document.getElementById("dia").value;
-        const listaAulas = horarios[diaEscolhido];
         const container = document.getElementById("horario");
-        
+
         if (container) {
+          const aulasDaSala = horarios[salaEscolhida];
+          const listaAulas = aulasDaSala ? aulasDaSala[diaEscolhido] : null;
+
           if (listaAulas) {
-            container.innerHTML = "<h2>Horário de " + diaEscolhido + ":</h2>";
+            container.innerHTML = "<h2>Horário de " + diaEscolhido + " (" + salaEscolhida + "):</h2>";
             let htmlGerado = "<ul>";
             listaAulas.forEach(aula => {
               let prof = aula.professor || aula.professora || "";
@@ -121,16 +142,15 @@ html(lang="pt-br")
             htmlGerado += "</ul>";
             container.innerHTML += htmlGerado;
 
-            // Lógica de Memória: verifica se já exibiu o modal antes
             const jaExibiu = localStorage.getItem('jaPreencheu');
             if (!jaExibiu) {
               setTimeout(function() {
                 $('#modalAgradecimento').modal('show');
-                localStorage.setItem('jaPreencheu', 'true'); // Grava a informação no navegador
+                localStorage.setItem('jaPreencheu', 'true');
               }, 7000);
             }
           } else {
-            container.innerHTML = "<h2>Selecione um dia válido</h2>";
+            container.innerHTML = "<h2>Horário não encontrado para esta combinação.</h2>";
           }
         }
       }
